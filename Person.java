@@ -1,0 +1,55 @@
+public class Person {
+    private String name;
+    private int age;
+    private String email;
+
+    public Person(String name, int age, String email) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age > 0) {
+            this.age = age;
+        } else {
+            throw new IllegalArgumentException("Age must be positive");
+        }
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
+    public static void main(String[] args) {
+        Person person = new Person("John Doe", 30, "john@example.com");
+        System.out.println(person);
+        person.setAge(31);
+        System.out.println("Updated: " + person);
+    }
+}
